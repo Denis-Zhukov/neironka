@@ -1,6 +1,4 @@
 import os
-import time
-
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 import numpy as np
@@ -10,10 +8,8 @@ from tensorflow import keras
 from tensorflow.keras.models import load_model
 from tensorflow.keras.layers import Dense, Flatten
 
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
-
-x_train = x_train / 255
-x_test = x_test / 255
+x_test = []
+y_test = []
 
 # 2 - [0,0,1,0,0,0,0,0,0,0]
 y_train_cat = keras.utils.to_categorical(y_train, 10)
